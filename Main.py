@@ -13,17 +13,20 @@ if __name__ == '__main__':
     background_image = pygame.image.load("images/city_day.jpg").convert()
 
     running = True
-    speed = 20
-    height_free = 100
-    width = 50
+    speed = 5
+    height_free = 220
+    width = 60
+    x = 1250
     clock = pygame.time.Clock()
     while running:
         screen.blit(background_image, background_position)
-        level = randint(0, 3)
+        level = randint(0, 2)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-        test_tube = Tube(width, height_free, level)
+        test_tube = Tube(width, height_free, level, x, speed)
         test_tube.render(screen)
+        x -= speed
         pygame.display.flip()
+        clock.tick(60)
     pygame.quit()
