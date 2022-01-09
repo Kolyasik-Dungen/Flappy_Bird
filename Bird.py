@@ -1,4 +1,3 @@
-from random import randint
 import pygame
 import os
 import sys
@@ -13,16 +12,12 @@ def load_image(name, colorkey=None):
     return image
 
 
-class Tube(pygame.sprite.Sprite):
-    image = load_image("spr_block.png")
+class Bird(pygame.sprite.Sprite):
+    image = load_image("bird_stand.jpg")
 
     def __init__(self, *group):
         super().__init__(*group)
-        self.y = randint(-285, -75)
-        self.image = Tube.image
+        self.image = Bird.image
         self.rect = self.image.get_rect()
-        self.rect.x = 300
-        self.rect.y = self.y
-
-    def update(self):
-        self.rect = self.rect.move(-5, 0)
+        self.rect.x = 100
+        self.rect.y = 150
