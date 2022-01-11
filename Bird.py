@@ -13,11 +13,14 @@ def load_image(name, colorkey=None):
 
 
 class Bird(pygame.sprite.Sprite):
-    image = load_image("bird_stand.jpg")
+    image = load_image("brd.png")
 
     def __init__(self, *group):
         super().__init__(*group)
         self.image = Bird.image
         self.rect = self.image.get_rect()
-        self.rect.x = 100
-        self.rect.y = 150
+        self.rect.x = 50
+        self.rect.y = 100
+
+    def update(self):
+        self.rect = self.rect.move(0, -10)
