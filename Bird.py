@@ -19,8 +19,8 @@ class Bird(pygame.sprite.Sprite):
         super().__init__(*group)
         self.image = Bird.image
         self.rect = self.image.get_rect()
-        self.rect.x = 50
-        self.rect.y = 100
+        self.rect.x = 150
+        self.rect.y = 300
 
     def update(self):
         self.rect = self.rect.move(0, -10)

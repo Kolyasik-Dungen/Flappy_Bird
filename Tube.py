@@ -25,4 +25,4 @@ class Tube(pygame.sprite.Sprite):
         self.rect.y = self.y
 
     def update(self):
-        self.rect = self.rect.move(-5, 0)
+        self.rect = self.rect.move(-3, 0)
