@@ -14,6 +14,7 @@ def load_image(name, colorkey=None):
 
 class Bird(pygame.sprite.Sprite):
     image = load_image("brd.png")
+    image.set_colorkey('White')
 
     def __init__(self, *group):
         super().__init__(*group)

@@ -15,13 +15,14 @@ def load_image(name, colorkey=None):
 
 class Tube(pygame.sprite.Sprite):
     image = load_image("spr_block.png")
+    image.set_colorkey('White')
 
     def __init__(self, *group):
         super().__init__(*group)
         self.y = randint(-285, -75)
         self.image = Tube.image
         self.rect = self.image.get_rect()
-        self.rect.x = 1050
+        self.rect.x = 1000
         self.rect.y = self.y
 
     def update(self):
