@@ -22,5 +22,13 @@ class Bird(pygame.sprite.Sprite):
         self.rect.x = 50
         self.rect.y = 100
 
+        self.gravity = 1
+
     def update(self):
-        self.rect = self.rect.move(0, -10)
+        self.rect = self.rect.move(0, self.gravity)
+        self.gravity += 1
+
+    def set_jump(self):
+        self.gravity -= 20
+
+

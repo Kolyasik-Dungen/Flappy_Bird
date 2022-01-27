@@ -15,7 +15,7 @@ if __name__ == '__main__':
     running = True
     clock = pygame.time.Clock()
     all_Bird = pygame.sprite.Group()
-    Bird(all_Bird)
+    bird = Bird(all_Bird)
     all_tubes = pygame.sprite.Group()
     die_sound = pygame.mixer.Sound("data/die.ogg")
     wing_sound = pygame.mixer.Sound("data/wing.ogg")
@@ -27,8 +27,9 @@ if __name__ == '__main__':
                 running = False
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    all_Bird.update()
+                    bird.set_jump()
                     wing_sound.play()
+        all_Bird.update()
         all_Bird.draw(screen)
         Tube(all_tubes)
         all_tubes.update()
