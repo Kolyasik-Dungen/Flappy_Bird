@@ -23,6 +23,8 @@ if __name__ == '__main__':
     point_sound = pygame.mixer.Sound("data/point.ogg")
 
     while running:
+        if bird.intersect(all_tubes.sprites()):
+            running = False
         screen.blit(background_image, background_position)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

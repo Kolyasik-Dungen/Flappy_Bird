@@ -1,6 +1,12 @@
+from typing import List
+
 import pygame
 import os
 import sys
+
+from pygame.sprite import Sprite
+
+from Tube import Tube
 
 
 def load_image(name, colorkey=None):
@@ -30,5 +36,11 @@ class Bird(pygame.sprite.Sprite):
 
     def set_jump(self):
         self.gravity = -10
+
+    def intersect(self, tubes: List[Sprite]):
+        for tube in tubes:
+            if tube.rect.colliderect(self.rect):
+                return True
+        return False
 
 
