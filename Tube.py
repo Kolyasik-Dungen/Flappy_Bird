@@ -15,6 +15,7 @@ def load_image(name, colorkey=None):
 
 class Tube(pygame.sprite.Sprite):
     image = load_image("spr_block.png")
+    image.set_colorkey("WHITE")
     last = []
 
     def __init__(self, *group):
