@@ -2,7 +2,6 @@ import pygame
 from Tube import Tube
 from Bird import Bird
 
-
 if __name__ == '__main__':
     pygame.init()
 
@@ -15,22 +14,30 @@ if __name__ == '__main__':
     running = True
     clock = pygame.time.Clock()
     all_Bird = pygame.sprite.Group()
-    Bird(all_Bird)
+    bird = Bird(all_Bird)
     all_tubes = pygame.sprite.Group()
+    SPAWNEVENT = pygame.USEREVENT + 1
+    pygame.time.set_timer(SPAWNEVENT, 2000)
     die_sound = pygame.mixer.Sound("data/die.ogg")
     wing_sound = pygame.mixer.Sound("data/wing.ogg")
     point_sound = pygame.mixer.Sound("data/point.ogg")
+
     while running:
+        if bird.intersect(all_tubes.sprites()):
+            running = False
         screen.blit(background_image, background_position)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            elif event.type == SPAWNEVENT:
+                Tube(all_tubes)
+                pygame.time.set_timer(SPAWNEVENT, 2000)
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    all_Bird.update()
+                    bird.set_jump()
                     wing_sound.play()
+        all_Bird.update()
         all_Bird.draw(screen)
-        Tube(all_tubes)
         all_tubes.update()
         all_tubes.draw(screen)
         pygame.display.flip()
