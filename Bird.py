@@ -29,6 +29,6 @@ class Bird(pygame.sprite.Sprite):
         self.gravity += 1
 
     def set_jump(self):
-        self.gravity -= 20
+        self.gravity = -10
 
 
