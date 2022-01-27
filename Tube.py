@@ -15,6 +15,7 @@ def load_image(name, colorkey=None):
 
 class Tube(pygame.sprite.Sprite):
     image = load_image("spr_block.png")
+    last = []
 
     def __init__(self, *group):
         super().__init__(*group)
@@ -23,6 +24,7 @@ class Tube(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = 1050
         self.rect.y = self.y
+        self.last = self
 
     def update(self):
         self.rect = self.rect.move(-5, 0)
