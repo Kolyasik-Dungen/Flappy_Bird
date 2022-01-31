@@ -27,6 +27,7 @@ class Bird(pygame.sprite.Sprite):
         self.image = Bird.image
         self.rect = self.image.get_rect()
         self.rect.x = 50
+        self.mask = pygame.mask.from_surface(self.image)
         self.rect.y = 100
 
         self.gravity = 1
