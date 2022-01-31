@@ -1,11 +1,8 @@
 from typing import List
-
 import pygame
 import os
 import sys
-
 from pygame.sprite import Sprite
-
 from Tube import Tube
 
 
