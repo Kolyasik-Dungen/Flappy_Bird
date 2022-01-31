@@ -2,15 +2,14 @@ import pygame
 from Tube import Tube
 from Bird import Bird
 
+
 if __name__ == '__main__':
     pygame.init()
-
     size = 950, 720
     screen = pygame.display.set_mode(size)
     pygame.display.set_caption("Flappy bird")
     background_position = [0, 0]
     background_image = pygame.image.load("data/bg1.png").convert()
-
     running = True
     score = 0
     text_x = 475
@@ -26,7 +25,6 @@ if __name__ == '__main__':
     #die_sound = pygame.mixer.Sound("data/die.ogg")
     #wing_sound = pygame.mixer.Sound("data/wing.ogg")
     #point_sound = pygame.mixer.Sound("data/point.ogg")
-
     while running:
         text = font.render(str(score), True, (0, 0, 0))
         time_of_tube += 1
