@@ -22,7 +22,6 @@ class Tube(pygame.sprite.Sprite):
         super().__init__(*group)
         self.y = randint(-285, -75)
         self.image = Tube.image
-        self.mask = pygame.mask.from_surface(self.image)
         self.rect = self.image.get_rect()
         self.rect.x = 1050
         self.rect.y = self.y
