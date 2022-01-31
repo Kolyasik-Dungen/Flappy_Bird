@@ -30,13 +30,9 @@ if __name__ == '__main__':
     while running:
         text = font.render(str(score), True, (0, 0, 0))
         time_of_tube += 1
-
+        if bird.intersect(all_tubes.sprites()):
+            running = False
         screen.blit(background_image, background_position)
-
-        for tube in all_tubes.sprites():
-            if pygame.sprite.collide_mask(bird, tube):
-                running = False
-
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
