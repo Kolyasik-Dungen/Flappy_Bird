@@ -99,7 +99,7 @@ class End_Menu:
 go = End_Menu()
 
 go1 = Main_Menu()
-f = open("score.txt", encoding="utf8")
+f = open("data/score.txt", encoding="utf8")
 score_best = f.readline()
 f.close()
 go1.run()
@@ -138,7 +138,7 @@ while running:
     for tube in all_tubes.sprites():
         if pygame.sprite.collide_mask(bird, tube):
             running = False
-            f = open("score.txt", 'w')
+            f = open("data/score.txt", 'w')
             if int(score_best) <= round(score):
                 score_best = score
             print(round(int(score_best)), file=f)
