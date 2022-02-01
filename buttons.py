@@ -1,7 +1,7 @@
 import pygame
 
 
-class Button():
+class Button:
     def __init__(self, x_coord, y_coord, button_w, button_h, font_color, background_color, button_text, font_size):
         self.x_coord = x_coord
         self.y_coord = y_coord
@@ -14,7 +14,7 @@ class Button():
 
         self.button_text = button_text
 
-        self.font = pygame.font.Font('data/FlappyBirdy.ttf', font_size)
+        self.font = pygame.font.Font('data/Flappy-Bird.ttf', font_size)
 
         self.image = pygame.Surface((self.button_w, self.button_h))
         self.image.fill(self.background_color)
